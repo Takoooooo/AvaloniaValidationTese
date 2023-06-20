@@ -17,7 +17,7 @@ public class MainWindowViewModel : ReactiveObject, IValidatableViewModel
         IObservable<bool> valtest =
             this.WhenAnyValue(
                 x => x.Value,
-                (v) => v != 0&&v!=null);
+                (v) => v != 0 && v != null);
 
         this.ValidationRule(
             vm => vm.Value, // The property name selector expression.
