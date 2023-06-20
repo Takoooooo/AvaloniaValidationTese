@@ -10,14 +10,14 @@ namespace TestAvaloniaSunbox.ViewModels;
 public class MainWindowViewModel : ReactiveObject, IValidatableViewModel
 {
     [Reactive]
-    public int Value { get; set; }
+    public int? Value { get; set; }
 
     public MainWindowViewModel()
     {
         IObservable<bool> valtest =
             this.WhenAnyValue(
                 x => x.Value,
-                (v) => v != 0);
+                (v) => v != 0&&v!=null);
 
         this.ValidationRule(
             vm => vm.Value, // The property name selector expression.
